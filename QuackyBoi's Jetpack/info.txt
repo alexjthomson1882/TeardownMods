@@ -1,0 +1,3 @@
+name = QuackyBoi's Jetpack
+author = Quacky Boi
+description = Improved version of the official jetpack mod. Added configurable jetpack power and the jetpack power isn't affected by frame-rate anymore! Hold SPACE to use the jetpack; thrust is created in the down direction relative to the player camera (look direction).
