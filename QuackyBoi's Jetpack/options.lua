@@ -1,8 +1,8 @@
 function init()
 	power = GetFloat("savegame.mod.power")
 	if power == 0.0 then power = 20.0 end
-	keybind = GetFloat("savegame.mod.keybind");
-	if keybind == 0.0 then keybind = "space" end
+	keybind = GetFloat("savegame.mod.keybind")
+	if keybind == 0.0 then keybind = 1.0 end
 	keybindTable = {
 		"Space", -- 1
 		"Ctrl",  -- 2
