@@ -1,6 +1,19 @@
 function init()
 	power = GetFloat("savegame.mod.power")
 	if power == 0.0 then power = 20.0 end
+	keybind = GetFloat("savegame.mod.keybind");
+	if keybind == null then keybind = "space" end
+	keybindTable = {
+		"Space", -- 1
+		"Ctrl",  -- 2
+		"Shift", -- 3
+		"Z",     -- 4
+		"X",     -- 5
+		"C",     -- 6
+		"V",     -- 7
+		"G",     -- 8
+		"Q"      -- 9
+	}
 end
 
 function draw()
@@ -10,6 +23,7 @@ function draw()
 	UiFont("bold.ttf", 48)
 	UiText("QuackyBoi's Jetpack")
 	UiFont("regular.ttf", 26)
+	
 	UiTranslate(0, 70)
 	UiPush()
 		UiText("Power")
@@ -20,6 +34,18 @@ function draw()
 		UiColor(0.2, 0.6, 1)
 		UiText(power)
 		SetFloat("savegame.mod.power", power)
+	UiPop()
+	
+	UiTranslate(0, 110)
+	UiPush()
+		UiText("Keybind")
+		UiAlign("right")
+		UiTranslate(95, 40)
+		keybind = optionsSlider(keybind, 1, table.getn(keybindTable))
+		UiTranslate(-75, 20)
+		UiColor(0.2, 0.6, 1)
+		UiText(keybindTable[math.floor(keybind)])
+		SetFloat("savegame.mod.keybind", keybind)
 	UiPop()
 
 	UiButtonImageBox("ui/common/box-outline-6.png", 6, 6)
