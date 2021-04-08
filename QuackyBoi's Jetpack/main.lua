@@ -2,24 +2,28 @@ function init()
 	jetpackLoop = LoadLoop("jetpack_loop.ogg")
 	power = GetFloat("savegame.mod.power")
 	if power == 0 then power = 20 end
-	local keybindTable = {
-		"space", -- 1
-		"ctrl",  -- 2
-		"shift", -- 3
-		"z",     -- 4
-		"x",     -- 5
-		"c",     -- 6
-		"v",     -- 7
-		"g",     -- 8
-		"q"      -- 9
-	}
-	local keybindValue = math.floor(GetFloat("savegame.mod.keybind"))
-	if keybindValue < 1 then
-		keybindValue = 1
-	elseif keybindValue > table.getn(keybindTable) then
-		keybindValue = table.getn(keybindTable)
+	local keybindValue = GetFloat("savegame.mod.keybind")
+	if keybindValue == 0.0 then keybind = "space"
+	else
+		keybindValue = math.floor(keybindValue)
+		local keybindTable = {
+			"space", -- 1
+			"ctrl",  -- 2
+			"shift", -- 3
+			"z",     -- 4
+			"x",     -- 5
+			"c",     -- 6
+			"v",     -- 7
+			"g",     -- 8
+			"q"      -- 9
+		}
+		if keybindValue < 1 then
+			keybindValue = 1
+		elseif keybindValue > table.getn(keybindTable) then
+			keybindValue = table.getn(keybindTable)
+		end
+		keybind = keybindTable[keybindValue]
 	end
-	keybind = keybindTable[keybindValue]
 	active = false
 end
 
