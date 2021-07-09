@@ -1,7 +1,7 @@
 function init()
 	-- get power:
 	power = GetFloat("savegame.mod.power")
-	if power <= 0.0 then power = 20.0 end
+	if power <= 0.0 then power = 22.0 end
 	-- create keybind table:
 	keybindTable = {
 		"Space", -- 1
@@ -12,7 +12,8 @@ function init()
 		"C",     -- 6
 		"V",     -- 7
 		"G",     -- 8
-		"Q"      -- 9
+		"Q",     -- 9
+		"Alt"    -- 10
 	}
 	-- get keybinds:
 	keybind = GetFloat("savegame.mod.keybind")

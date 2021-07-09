@@ -3,7 +3,7 @@ function init()
 	jetpackLoop = LoadLoop("jetpack_loop.ogg")
 	-- get power:
 	power = GetFloat("savegame.mod.power")
-	if power <= 0.0 then power = 20.0 end
+	if power <= 0.0 then power = 22.0 end
 	-- create keybind table:
 	local keybindTable = {
 		"space", -- 1
@@ -14,7 +14,8 @@ function init()
 		"c",     -- 6
 		"v",     -- 7
 		"g",     -- 8
-		"q"      -- 9
+		"q",     -- 9
+		"alt"    -- 10
 	}
 	-- get keybind:
 	local keybindValue = GetFloat("savegame.mod.keybind") -- get keybind value
